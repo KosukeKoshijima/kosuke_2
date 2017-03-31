@@ -12,7 +12,13 @@
       <dd><%= @movie.year %></dd>
 
       <dt>Directorid</dt>
-      <dd><%= @movie.directorid %></dd>
+      <dd>
+        <% if @movie.directorid.present? %>
+          <a href="/directors/<%= @movie.directorid %>">
+            <%= @movie.directorid.image %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

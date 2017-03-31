@@ -19,7 +19,13 @@
       <tr>
         <td><%= movie.title %></td>
         <td><%= movie.year %></td>
-        <td><%= movie.directorid.image %></td>
+        <td>
+          <% if movie.directorid.present? %>
+            <a href="/directors/<%= movie.directorid.id %>">
+              <%= movie.directorid.image %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/movies/<%= movie.id %>" class="btn btn-primary">Show</a>
           <a href="/movies/<%= movie.id %>/edit" class="btn btn-warning">Edit</a>
