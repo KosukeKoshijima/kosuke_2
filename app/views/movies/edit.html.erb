@@ -42,7 +42,7 @@
           Directorid
         </label>
 
-        <input type="text" id="directorid" name="directorid" placeholder="Directorid" class="form-control" value="<%= @movie.directorid %>">
+        <%= select_tag(:directorid, options_from_collection_for_select(Director.all, :id, :image, @movie.directorid), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
